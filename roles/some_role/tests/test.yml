@@ -1,0 +1,8 @@
+- hosts: group_a:group_b
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: Include role
+    include_role:
+      name: some_role

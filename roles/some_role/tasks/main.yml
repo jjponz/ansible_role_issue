@@ -1,0 +1,16 @@
+---
+- block:
+  - name: configure some nginx vhost
+    include_role:
+      name: geerlingguy.nginx
+    vars:
+      nginx_vhosts:
+      - listen: "80"
+        server_name: "{{ base_url }}"
+        extra_parameters: |
+          hello baby
+  when: inventory_hostname in groups['group_a']
+
+
+
+
